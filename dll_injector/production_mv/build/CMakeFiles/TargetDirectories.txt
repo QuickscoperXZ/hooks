@@ -1,0 +1,3 @@
+C:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv/build/CMakeFiles/Tester.dir
+C:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,10 @@
+^C:\USERS\USEROK\DESKTOP\RSRCH\TESTS\HOOKS\DLL_INJECTOR\PRODUCTION_MV\BUILD\CMAKEFILES\93E47419181F3D2E1DE20ED8A9107054\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv -BC:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/userok/Desktop/rsrch/tests/hooks/dll_injector/production_mv/build/TESTProgram.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

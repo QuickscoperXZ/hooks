@@ -3,8 +3,12 @@
 #include <map>
 #include <string>
 #include <tuple>
+#include <functional>
+#include <any>
 
 using namespace std;
+
+//typedef void (*fPtr)(void);
 
 bool CheckDLLPresence(){
     HANDLE hDLLStatusHandle = GetModuleHandleA("testdll.dll");
@@ -13,6 +17,37 @@ bool CheckDLLPresence(){
     }
     else return false;    
 }
+
+// template <typename returnValue, typename function, typename... Args>
+// returnValue runFunction(function fFunction, tuple<Args...> args){
+    
+//     return apply(function,args);
+// }
+
+template <typename returnValue, typename Func, typename... Args>
+returnValue runFunction(Func func, tuple<Args...> args){
+    
+    return apply(func,args);
+}
+
+//int a =OpenProcess()
+
+tuple a = make_tuple(PROCESS_ALL_ACCESS,0,GetCurrentProcess());
+
+map<int,function<any(any)>> mFunctionMap = {
+    {
+        1, runFunction<HANDLE>(OpenProcess,a)
+    }
+    
+};
+
+void ResolveFunction(int pageId, int functionId){
+    map<int,int> mPageProcess = {
+        {}
+    }
+}
+
+
 
 void cls(){
     cout << "\033[2J\033[1;1H";

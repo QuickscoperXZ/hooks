@@ -52,6 +52,7 @@
         "xutility": "cpp",
         "string": "cpp",
         "map": "cpp",
-        "any": "cpp"
+        "any": "cpp",
+        "functional": "cpp"
     }
 }

